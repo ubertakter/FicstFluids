@@ -45,10 +45,8 @@ Its buffer fills, the line comes up to the producer's pressure, and it stays the
 A Fluid Buffer above the machines holds the pressure up from its own water while the network fills, and through any surge later.
 Its water surface must stand above the machines' inlets by at least their desired inlet pressure (8 m for a Refinery), plus the friction on the way.
 
-.Image to come
-****
-*Screenshot:* a water tower that worked, with its height above the machines marked.
-****
+.Overall view of "water towers" feeding an input manifold for refineries
+image::water-towers-with-table.png[Water towers example]
 
 === Charge the tower before opening it
 

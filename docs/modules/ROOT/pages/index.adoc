@@ -1,6 +1,11 @@
 = FicstFluids
 :description: What FicstFluids does, and how this manual is laid out.
 
+image::ficst-fluids-banner.png[FicstFluids]
+
+[.lead]
+_The mod that fixes Ficsit's forsaken fluid flows!_
+
 FicstFluids is a mod that replaces Satisfactory's fluid physics with realistic engineering models. Well, realistic enough anyway.
 Vanilla moves fluid between pipe segments by rules of its own: a pipe has a flow rating, a pump adds a fixed "head lift", and gas behaves like a liquid. In FicstFluids, physics determines the limits, so those rules no longer apply.
 
@@ -19,10 +24,11 @@ IMPORTANT: Networks built for vanilla will often not work under FicstFluids unti
 That is intended.
 See xref:coming-from-vanilla.adoc[].
 
-.Image to come
-****
-*Screenshot:* a pump panel and a pipe panel side by side, showing pressure, flow and lift.
-****
+.Pipeline interface for a Mk1 pipe
+image::mk1-pipe-ui.png[The new pipeline interface]
+
+.Pump interface for a Mk2 pump
+image::mk2-pump-ui-full-range.png[The new pump interface for a Mk2 pump]
 
 == How this manual is laid out
 

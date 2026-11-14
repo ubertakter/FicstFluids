@@ -1,4 +1,5 @@
 = Designing a liquid network
+:xrefstyle: short
 :description: Budgeting head, sizing pumps, manifolds, and returning water to a pressurized network.
 
 A liquid network works when every machine's inlet gets the pressure it needs while the network carries the flow they use.
@@ -15,7 +16,8 @@ A pump adds its lift, at the flow through it.
 . *Minus the climb.*
 Every meter up costs a meter of head; every meter down gives one back.
 . *Minus friction.*
-More for long pipes, high flow, many bends, Mk1 pipe and thick liquids.
+More for long pipes, high flow, Mk1 pipe and thick liquids.
+// Bend losses are not in the model yet; restore "many bends," above if they are added.
 . *What has to be left:* the machine's inlet pressure.
 Most liquid inlets draw nothing below 4 m and run at full speed from 5 m (see xref:machines.adoc[]).
 
@@ -49,13 +51,25 @@ Producers can feed one pipeline and consumers draw from it, as you would build a
 For example, Refineries making Alumina Solution can feed one manifold that the Aluminum Scrap Refineries draw from.
 
 Watch the head: a Refinery's outlet pushes at 10 m and its inlet runs at full speed from 5 m.
-So the producers alone leave about 5 m for the climb and the friction along the manifold (2 m if you want buffers to refill at the fastest rate).
-Keep it short and level, or add a pump.
+So the producers alone leave about 5 m for the climb and the friction along the manifold (2 m if you want buffers to refill at the fastest rate). Keep it short and level, or add a pump or a "water tower".
 
-.Image to come
-****
-*Schematic:* producers feeding one manifold, consumers drawing from it, with the head at each end marked.
-****
+<<fig-output-manifold>> shows several refinery outputs connected to one pipe, creating a manifold. Since there's only one end of the manifold "open", the head created by the machine outlets creates pressure in the manifold, pushing the flow to the exit.
+
+The outlet of the refineries' manifold is pushed into a "water tower" as shown in <<fig-manifold-water-tower>>. This is not necessarily a requirement, as a pump could be used instead of a tower. Indeed, the figure shows a pump pushing fluid into the tower. In some cases, it may be easier to handle startup of the machines if there is a "water tower" feeding the next input manifold, since the water tower aids in handling transient changes in flow.
+
+Then, the output of the "water tower" provides head pressure into the next manifold feeding machines, in this case a set of Blenders, as shown in <<fig-input-manifold>>.
+
+[#fig-output-manifold]
+.Refineries whose outputs are connected to a manifold
+image::output-manifold.png[Refineries whose outputs are connected to a manifold]
+
+[#fig-manifold-water-tower]
+.Output manifold connects to a "water tower" to provide downstream head pressure
+image::output-manifold-water-tower.png[A water tower collecting the output from a manifold, width=600]
+
+[#fig-input-manifold]
+.The "water tower" feeds another input manifold
+image::input-manifold.png[A water tower outlet feeding an input manifold]
 
 == Returning liquid to the network
 
@@ -80,12 +94,13 @@ A Mk1 lifts at most 32.7 m, less with flow; if the supply holds the join near th
 TIP: A flow limit on the supply valve lowers the pressure at the join.
 But it is a fixed setting, and starves the consumers if it is set below what they need beyond the returns.
 
-The balance must still close, as in vanilla: if the machines return more water than the network uses, the returns back up whatever the layout.
+While not likely to happen in vanilla, it's important to point out that the balance must still close: if the machines return more water than the network uses, the returns back up whatever the layout.
 
-.Image to come
-****
-*Schematic:* a water tower feeding Silica Blenders, their water outlets merged into a return pump that joins the supply just past a valve.
-****
+<<fig-return-to-supply>> shows the connection point between the supply for the blenders (from <<fig-input-manifold>>) and the water return from the Blenders. Supply (S) is coming in through a valve. The valve performs two functions: it only allows flow in one direction and it limits the flow coming in from supply. The Return \(R) flows into Pump (P). When there is enough head pressure to feed the pump, it turns on and pushes water back into the supply line. While the head at P is higher than at S, the supply flow shuts off and the pump pushes water from the return back into the supply line. As long as the head pressures are correct, this system is self-regulating.
+
+[#fig-return-to-supply]
+.Water return from machines to the supply line
+image::return-feed-supply.png[A return line tying back into a supply line]
 
 == Pumps in series or parallel
 

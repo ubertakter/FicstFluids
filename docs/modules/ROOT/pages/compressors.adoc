@@ -30,6 +30,15 @@ A Mk2 taking nitrogen at 600 kPa gauge (about 700 kPa absolute) delivers up to a
 TIP: A compressor's displacement is measured at its suction.
 Denser gas at the suction means more gas moved for the same displacement.
 
+The compressor's panel has the same *Range* toggle as the pump's (see xref:pumps.adoc#_the_pump_panel[The pump panel]).
+It opens on Near, because a compressor usually runs at a small part of its full flow, and on Full its dot sits squashed against the left edge.
+
+.Mk2 compressor interface with plot showing full range
+image::mk2-compressor-ui-full-range.png[Mk2 compressor plot showing full range]
+
+.Mk2 compressor interface with plot showing near range
+image::mk2-compressor-ui-near-range.png[Mk2 compressor plot showing near range]
+
 == Unloading pressure
 
 Every compressor unloads above about 82.7 MPa absolute, well above the highest machine inlet.

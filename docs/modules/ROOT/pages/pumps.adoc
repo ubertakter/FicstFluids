@@ -1,4 +1,5 @@
 = Pumps
+:xrefstyle: short
 :description: How much a pump lifts, why it depends on the flow, and when to use pumps in series or in parallel.
 
 A pump adds pressure to whatever reaches its inlet.
@@ -38,10 +39,29 @@ A pump draws power for the work it does, so a pump moving little uses little.
 
 Pumps are generally better than vanilla's: a Mk1 lifts up to 32.7 m against vanilla's 22 m, and no pipe rating caps the flow they move.
 
-.Image to come
-****
-*Plot:* lift against flow for the Mk1 and Mk2, drawn from the model's own pump curve, with design points and runouts marked.
-****
+.Mk1 and Mk2 pump lift versus flow
+image::pump-curves-mk1-mk2.png[Plot of Mk1 and Mk2 pump curves showing lift decreasing as flow increases]
+
+=== The pump panel
+
+The pump's panel plots its curve live, with a dot where it is running now.
+Click the *Range* box above the plot to switch between two views of the flow axis:
+
+* *Full* shows the whole curve, from no flow out to runout.
+Use it to see where the pump sits on its curve, and how far it is from its design point.
+* *Near* zooms in on the flow the pump is moving now, to about twice that flow.
+Use it to read the numbers when a pump is running at a small fraction of its range.
+
+Only the flow axis zooms; the lift and power scales stay the same, so the two views compare directly.
+Near holds its scale while the flow drifts, and only steps when the dot nears either edge.
+
+The pump panel opens on Full each time.
+
+.Mk2 pump interface with plot showing full range
+image::mk2-pump-ui-full-range.png[Mk2 pump plot showing full range]
+
+.Mk2 pump interface with plot showing near range
+image::mk2-pump-ui-near-range.png[Mk2 pump plot showing near range]
 
 == Before a pump will start
 
@@ -97,19 +117,23 @@ Two Mk1s in parallel give about 25 m at 600 m³/min.
 
 TIP: Size each pump for the flow through it, not for the lift alone.
 
-Build parallel branches alike (same length, bends and height) so they share the flow evenly.
-Each pump has a check valve, so a weaker one isn't run backwards.
+Build parallel branches alike (same length and height) so they share the flow evenly.
+Each pump has a check valve, so a weaker one isn't run backwards. In <<fig-mk1-parallel>>, the pump on the right carries slightly more flow, because the left pump's path is slightly longer: its detour out and back adds a little pipe, and so a little more friction.
+
+[#fig-mk1-parallel]
+.Mk1 pumps in parallel
+image::mk1-parallel-pumps.png[Mk1 pumps in parallel]
 
 .Example: six Water Extractors feeding twelve Coal Generators
 ====
 The generators need 540 m³/min and 18 m of lift.
 
-Two Mk1s in series on the riser gave about 9 m, and the generators farthest along starved.
-The same two Mk1s in parallel fixed it.
-A single Mk2 (50 m at 600 m³/min) would also have worked.
+Two Mk1s in series on the riser manage only about 9 m at 540 m³/min, so the flow settled near 516 m³/min at 14.8 m, and the generators ran short.
+The same two Mk1s in parallel fixed it: each carries 270 m³/min, together lifting 26.7 m, with plenty to spare.
+A single Mk2 (50 m at 600 m³/min) would also have worked, lifting about 53 m at 540 m³/min.
+See <<fig-mk1-series-parallel>>.
 ====
 
-.Image to come
-****
-*Schematic:* the same two Mk1s in series and in parallel, with the lift each gives at 540 m³/min.
-****
+[#fig-mk1-series-parallel]
+.Two Mk1s in series and in parallel on the example network
+image::mk1-series-parallel.png[Plot of lift against flow for one Mk1, two Mk1s in series, two in parallel and one Mk2, with the network's demand curve crossing them]
