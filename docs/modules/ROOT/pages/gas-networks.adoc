@@ -59,11 +59,6 @@ A compressor near the wells raises the whole line's pressure, so the same flow l
 * *Put the booster where the suction is still well above atmospheric,* not at the far end of a line that has run down.
 * *Compressors in series multiply:* two Mk2s reach about 7.9 × 7.9 times the first one's absolute suction pressure, less the line's losses between them.
 
-.Image to come
-****
-*Schematic:* wells, a compressor at the wells, a long line, a booster partway, and the consumers, with the pressure along the line plotted beneath.
-****
-
 == Bring a big line up in sections
 
 The time to reach a machine's pressure grows with the volume being filled.

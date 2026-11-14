@@ -1,4 +1,5 @@
 = Fluid mechanics primer
+:xrefstyle: short
 :description: The handful of ideas every other page relies on: pressure, head, friction, pump curves, and why gas is different.
 
 You don't need an engineering degree to build with FicstFluids, but you do need to understand a few terms and concepts.
@@ -53,7 +54,7 @@ The loss grows:
 
 * with the *length* of the pipe,
 * steeply with the *flow*: twice the flow costs roughly four times the pressure,
-* with *bends and fittings*,
+// Bend and fitting losses are not in the model yet; restore "* with *bends and fittings*," if they are added.
 * with a *narrow pipe*: a Mk2 pipe (1.5 m bore) loses far less than a Mk1 (1.25 m) at the same flow,
 * with a *thick liquid*: Heavy Oil Residue is thousands of times more viscous than water in the model.
 
@@ -68,18 +69,25 @@ That is why starting a network takes some care (see xref:starting-up.adoc[]).
 
 == Pump curves
 
-A pump does not add a fixed head.
-It lifts the most when nothing flows, and less the more you draw through it, down to nothing at all at its *runout* flow.
+A pump does not add a fixed head. It lifts the most when nothing flows, and less the more you draw through it, down to nothing at all at its *runout* flow, as shown in <<fig-mk1-mk2-pump-curves>>.
 Its *design point* is the flow it was made for, and the one where it runs best.
 
 The network settles where the pump's lift equals what the network needs at that flow.
-Draw more, and the pump lifts less; the pressures drop until supply and demand match again.
-The numbers for each pump are in xref:pumps.adoc[].
+In <<fig-example-mk1-demand-curve>>, the network's need starts at 19 m (the rise and the generators' inlet pressure, less what the extractors push),
+grows gently with friction, and then goes vertical at 270 m³/min, because six Coal Generators take only what they use.
+The pump could lift more than they need, about 6 m more, and that surplus shows up as extra pressure at the generators.
 
-.Image to come
-****
-*Plot:* lift against flow for the Mk1 and Mk2 pumps, drawn from the model's own curve, with each design point and runout marked, and one network's demand curve crossing it to show where it settles.
-****
+If the machines wanted more than the pump can deliver, the crossing would land on the sloped part of the curve instead.
+The machines would get less flow than they ask for: short of pressure they slow down, and below their minimum they draw nothing
+(see xref:machines.adoc#_inlets_need_pressure[Machines]).
+
+[#fig-mk1-mk2-pump-curves]
+.Mk1 and Mk2 pump curves showing lift versus flow
+image::pump-curves-mk1-mk2.png[Mk1 and Mk2 pump curves]
+
+[#fig-example-mk1-demand-curve]
+.Mk1 settle point on an example network feeding six Coal Generators
+image::pump-meets-network.png[Pump settle point]
 
 == Suction and cavitation
 

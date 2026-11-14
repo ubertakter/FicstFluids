@@ -4,10 +4,8 @@
 Press *L* (by default) to open the Network Status report.
 It lists every network FicstFluids runs, with what is wrong with each and where.
 
-.Image to come
-****
-*Screenshot:* the report window with a few networks listed, one expanded.
-****
+.Example of status report
+image::status-report-liquid.png[Status report of a liquid network]
 
 == Severities
 
@@ -19,6 +17,12 @@ Note:: Worth knowing, not wrong: a machine on standby, an inlet a little below i
 The *Hide healthy networks* checkbox hides networks with nothing worse than a Note.
 
 == Reading it
+
+The report has two primary sections, "Liquid" or "Gas", selected by clicking the button. Clicking the "Analyze" button re-runs the analysis of every network, liquid and gas, allowing you to see an update if desired. The "Hide healthy networks" checkbox does exactly what it says. Unchecking the box shows all networks.
+
+=== Description and location
+
+The report provides a general description of the network as well as its location relative to your position (the location is the center of the area the network's machines cover). Each of the machines listed in the network also have a location relative to your current position. Clicking on "Mark on map" places a diamond shaped marker on the map that has a pipeline icon for the fluid in this network. The button changes to "Remove marker", or you can select the marker on the map to remove it as you would a manually placed marker.
 
 === The same pressure, different severities
 
