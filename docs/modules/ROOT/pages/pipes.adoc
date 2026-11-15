@@ -43,8 +43,23 @@ The liquid runs down it as a stream, and the pipe shows part full while carrying
 Flushing a pipe empties its whole run at once, and the network carries on.
 On a gas line, flushing vents the run to atmospheric pressure.
 
-Flushing a whole gas network empties it to atmospheric and pauses it, compressors stopped, until a fluid arrives again.
-Then it rebuilds itself and carries on.
+=== Flushing a whole network
+
+Flushing a whole network empties every pipe and Fluid Buffer on it, and pauses it: nothing flows, and its pumps or compressors stop.
+On a gas network, the pipes and Fluid Buffers are left at atmospheric pressure.
+
+What a flush leaves alone:
+
+* *Machines* keep what is in their buffers.
+* *Freight platforms* keep what they hold.
+To empty one, flush the platform itself; see xref:freight.adoc#_changing_a_platforms_fluid[Changing a platform's fluid].
+
+The network waits until a fluid arrives again, from the first machine or extractor to push one in, and that sets its fluid.
+It can be a different fluid from before.
+Then it rebuilds itself, empty, and fills from its sources as it would at start-up (see xref:starting-up.adoc[]).
+
+TIP: Changing a network's fluid? Change the machines' recipes too.
+A machine whose recipe doesn't use the new fluid is a dead end: a consumer runs down what it holds and stops, and a producer backs up.
 
 == Placing a pump on a full pipe
 
