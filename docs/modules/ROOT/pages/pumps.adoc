@@ -74,9 +74,27 @@ A pump far above its source, or at the end of a long suction line, may lift less
 Switched on, a pump ramps from rest to full speed over 10 s, and its lift grows with it.
 Switched off or unpowered, it coasts down on its own inertia, still lifting a little as it slows.
 Against a shut line a Mk1 takes about 10 s, and a Mk2 about 8 s, to fall to 30% speed.
-A pump at rest blocks the line in both directions.
 
 So pressure downstream of a pump comes and goes over seconds, not at once.
+
+=== The built-in check valve
+
+Every pump has a check valve on its outlet.
+Nothing flows backward through a pump, whether it is running, coasting down or stopped.
+
+* You don't need a valve beside a pump to keep the flow one way.
+* A stronger pump in parallel can't run a weaker one backward (see <<_series_or_parallel>>).
+* When a pump stops, the liquid it lifted doesn't drain back down through it.
+The column above it stays up, held by the check valve, ready for the pump to start again.
+
+=== A stopped pump closes its line
+
+A pump at rest blocks its line in both directions: backward because of its check valve, forward because a pump that isn't turning passes next to nothing.
+So switching a pump off can shut off whatever is past it.
+If those machines should still get liquid while the pump is off, build a bypass around the pump with a xref:valves.adoc[valve] in it, pointing the same way as the pump.
+The valve is one-way, so while the pump runs it can't push liquid back around itself through the bypass.
+
+The exception is a pump that loses power while something is still pushing liquid through it; see the next section.
 
 === A pump with its power cut can keep turning
 
