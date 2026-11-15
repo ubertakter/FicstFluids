@@ -45,7 +45,7 @@ On a gas line, flushing vents the run to atmospheric pressure.
 
 === Flushing a whole network
 
-Flushing a whole network empties every pipe and Fluid Buffer on it, and pauses it: nothing flows, and its pumps or compressors stop.
+Flushing a whole network empties every pipe and Fluid Buffer on it: nothing flows, and its pumps or compressors stop.
 On a gas network, the pipes and Fluid Buffers are left at atmospheric pressure.
 
 What a flush leaves alone:
