@@ -17,7 +17,9 @@ This page lists what changed and where to read more.
 
 | Pump
 | A fixed head lift (22 m for a Mk1)
-| A pump curve: up to 32.7 m (Mk1) or 65.3 m (Mk2) at no flow, less as the flow rises. (xref:pumps.adoc[])
+| A pump curve: up to 32.7 m (Mk1) or 65.3 m (Mk2) at no flow, less as the flow rises.
+It starts only once its inlet pipe is full, takes seconds to speed up and to coast down, and slows itself if its inlet pressure is too low.
+Switched off, it adds no lift but still lets liquid through in its own direction. (xref:pumps.adoc[])
 
 | Machine inlets
 | Take whatever reaches them

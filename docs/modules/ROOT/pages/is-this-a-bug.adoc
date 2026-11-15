@@ -18,7 +18,7 @@ If what you see isn't here, or doesn't match the explanation, see xref:reporting
 | More flow is going through it than its runout. xref:pumps.adoc#_negative_lift[Negative lift]
 
 | A pump with its power cut keeps turning.
-| Flow from elsewhere is driving it like a turbine. Use a valve to stop a line. xref:pumps.adoc#_a_pump_with_its_power_cut_can_keep_turning[Pumps]
+| Flow from elsewhere is driving it like a turbine. Use a valve to stop a line. xref:pumps.adoc#_a_pump_that_is_off_still_lets_liquid_through[Pumps]
 
 | Two pumps in series barely lift more than one.
 | They each carry the whole flow. Put them in parallel. xref:pumps.adoc#_series_or_parallel[Series or parallel]
