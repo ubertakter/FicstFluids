@@ -74,18 +74,33 @@ A pump far above its source, or at the end of a long suction line, may lift less
 Switched on, a pump ramps from rest to full speed over 10 s, and its lift grows with it.
 Switched off or unpowered, it coasts down on its own inertia, still lifting a little as it slows.
 Against a shut line a Mk1 takes about 10 s, and a Mk2 about 8 s, to fall to 30% speed.
-A pump at rest blocks the line in both directions.
 
 So pressure downstream of a pump comes and goes over seconds, not at once.
 
-=== A pump with its power cut can keep turning
+=== The built-in check valve
 
-If something else is still pushing fluid through an unpowered pump (a higher tank, a drop, another pump upstream), that flow turns the impeller like a turbine.
-The pump slows only until the flow balances it, and holds that speed, drawing no power.
+Every pump has a check valve on its outlet.
+Nothing flows backward through a pump, whether it is running, coasting down or stopped.
+
+* You don't need a valve beside a pump to keep the flow one way.
+* A stronger pump in parallel can't run a weaker one backward (see <<_series_or_parallel>>).
+* When a pump stops, the liquid it lifted doesn't drain back down through it.
+The column above it stays up, held by the check valve, ready for the pump to start again.
+
+=== A pump that is off still lets liquid through
+
+A pump that is switched off or unpowered adds no lift, but it doesn't close its line.
+If something else pushes liquid toward it (a higher tank, a drop, another pump upstream), the liquid passes through in the pump's own direction at a small loss: a Mk1 at rest loses about 2 m passing 120 m³/min.
+The other way, its check valve still blocks it.
+
+That flow turns the impeller like a turbine.
+A pump whose power is cut slows only until the flow balances it and holds that speed, drawing no power; one that was already at rest starts turning.
 A pump holding at 37% speed is passing a little over its rated flow.
 
-An unpowered pump never stops the flow.
-To stop a line, use a valve: shut it, or set its flow limit to 0.
+The exception is a pump that isn't primed: until its inlet pipe is full, it passes nothing.
+
+TIP: Switching a pump off never stops the flow.
+To stop a line, use a xref:valves.adoc[valve]: shut it, or set its flow limit to 0.
 
 == Negative lift
 
