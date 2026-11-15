@@ -24,6 +24,68 @@ The report has two primary sections, "Liquid" or "Gas", selected by clicking the
 
 The report provides a general description of the network as well as its location relative to your position (the location is the center of the area the network's machines cover). Each of the machines listed in the network also have a location relative to your current position. Clicking on "Mark on map" places a diamond shaped marker on the map that has a pipeline icon for the fluid in this network. The button changes to "Remove marker", or you can select the marker on the map to remove it as you would a manually placed marker.
 
+=== Findings
+
+Each line in a network's list is one finding about one machine, pump, compressor, valve or run of pipes.
+During a start-up many of them are expected; see xref:starting-up.adoc#_what_the_report_shows_during_start_up[What the report shows during start-up].
+
+[cols="3,2,5"]
+|===
+| Finding | Severity | What it means
+
+| "… It draws nothing."
+| Problem; Warning if the machine isn't running
+| The inlet is at or below the pressure the machine needs to draw at all.
+
+| "… is starved … It can run at only N%."
+| Problem
+| The machine has stopped crafting for lack of this fluid, and its inlet is below its full-speed pressure.
+
+| "… Once its buffer is empty it will run at N%."
+| Warning
+| The inlet is below full-speed pressure, but the machine is still living off its buffer.
+
+| "… its buffer refills more slowly …"
+| Note
+| The inlet is between full-speed and desired pressure. The machine runs at its full rate.
+
+| "… can't deliver" / "… is idle"
+| Problem while machines are short; Warning otherwise
+| A machine outlet or extractor has something to give, but the pressure beside it is above what it pushes, so something stronger holds it shut.
+
+| "A run of N pipes is X% full."
+| Warning (liquid only)
+| Those pipes aren't full.
+
+| "… is running but moving nothing …"
+| Warning
+| A powered pump or compressor moves nothing and still uses power.
+
+| "… is at its pressure ratio limit …"
+| Warning (gas only)
+| The compressor can't raise the pressure any further, so it pumps nothing.
+
+| "… so it passes less."
+| Warning (gas only)
+| The compressor is unloading (shown as "relieving").
+
+| "… stands fully open … below its setpoint …"
+| Warning, only while machines are short
+| The supply behind the valve delivers less than its limit.
+
+| "… is on standby …"
+| Note
+| The machine has power but is switched off.
+
+| A pump or compressor "has no power"
+| Problem while machines are short; Warning otherwise
+| A pump adds no pressure; a compressor passes no gas.
+
+| A machine "has no power"
+| Warning
+| It neither takes from the network nor gives to it.
+|===
+
 === The same pressure, different severities
 
 The pressure says what a machine _will_ do; the severity says what it is doing now.

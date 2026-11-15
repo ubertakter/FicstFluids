@@ -122,3 +122,58 @@ A water tower is the same: it bridges a temporary shortage and drains in a perma
 
 * Buffers staying full and pressure staying up: it was start-up.
 * Pressure sinking back and buffers draining: the network is over capacity.
+
+== What the report shows during start-up
+
+The xref:report.adoc[Network Status report] is a snapshot.
+During a start-up, press *Analyze* every minute or so and watch how the findings change.
+xref:report.adoc#_findings[Findings] lists what each one means.
+
+*Expect Problems at first.*
+With every buffer empty, no machine is crafting, so every machine short of pressure counts as starved, which is a Problem.
+A network that will come up fine starts out looking broken.
+What matters is that the findings get milder.
+
+=== Liquid
+
+Roughly in this order:
+
+. *"A run of N pipes is X% full"* (Warning).
+The pipes are still filling, and the percentage rises from one Analyze to the next.
+. *"… It draws nothing"* (Problem) on machines the liquid hasn't reached yet, or where the pressure is still below what they need to draw at all.
+. As the pressure builds, each machine's finding steps down:
+.. *"is starved … It can run at only N%"* (Problem)
+.. *"Once its buffer is empty it will run at N%"* (Warning)
+.. *"its buffer refills more slowly"* (Note)
+.. no finding.
++
+The machines nearest the supply step down first, the farthest last.
+
+The standby sequence adds findings of its own: a Note on each machine on standby, and a Warning on each powered pump, which moves nothing while they are off.
+See xref:report.adoc#_machines_on_standby_warn_about_their_pumps[Machines on standby warn about their pumps].
+
+Two findings tend to come later in the start-up:
+
+* *"can't deliver"* on a machine returning liquid (Problem while machines are short, Warning otherwise).
+While the network's pressure is still low, the returns get in.
+Once a well, extractors or a water tower bring it up, they may not, so this can appear just as everything else clears.
+See xref:liquid-networks.adoc#_returning_liquid_to_the_network[Returning liquid to the network].
+* *"stands fully open … below its setpoint"* on a part-open valve (Warning, only while machines are short).
+The supply behind it delivers less than the limit you set.
+A valve shut to 0, as when charging a water tower, is never flagged.
+
+=== Gas
+
+Gas has no fill level, and the report doesn't give a line pressure.
+Low pressure shows on the machines' inlets, in kPa, stepping down from Problem to Note as on a liquid network.
+
+* *"at its pressure ratio limit"* (Warning) on a compressor at the far end of a line that isn't full yet.
+It clears as the line fills.
+* When you bring a line up in sections, the machines on sections not yet opened keep their inlet findings.
+If a running section's machines go back to Problem when you open the next valve, it was opened too far: close it part way.
+See xref:gas-networks.adoc#_bring_a_big_line_up_in_sections[Bring a big line up in sections].
+
+=== When it's up
+
+The network shows only Notes or nothing, and *Hide healthy networks* hides it.
+If Problems come back a minute after the machines are switched back on, see <<_start_up_shortage_or_an_over_capacity_network,Start-up shortage or an over-capacity network?>>
