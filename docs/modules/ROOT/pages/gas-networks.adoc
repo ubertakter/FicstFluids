@@ -84,7 +84,7 @@ A Particle Accelerator on Dark Matter Residue draws nothing below 48.3 MPa gauge
 That takes *at least two stages* of compression: from a Converter's 2.8 MPa, one Mk2 reaches only about 18 MPa, and two in series about 107 MPa.
 
 Compressing these hot plasmas costs far more power than nitrogen.
-The two Mk2 stages an Accelerator needs draw about 12.7 MW together.
+The two Mk2 stages an Accelerator needs draw about 16 to 17 MW together; the more gas they move, the more they draw.
 
 == Gas in an existing save
 
