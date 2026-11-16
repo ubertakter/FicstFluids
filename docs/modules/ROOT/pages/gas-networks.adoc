@@ -25,16 +25,6 @@ Pressure appears only once the line holds enough gas, and it fills no faster tha
 
 A compressor at the far end of a line that isn't full pulls its suction below atmospheric and runs near its ratio limit, moving little, until the line fills.
 
-.Example: four wells down a 1,075 m nitrogen line
-====
-Four Resource Well Extractors (120 std m³/min each) fed a 1,075 m line to a Mk2 compressor and a Blender.
-The Blender draws nothing below 5.5 MPa, which one Mk2 reaches only from about 600 kPa at its suction.
-The first gas reached the Blender after about half an hour.
-====
-
-*The quicker layout:* put the compressor at the consumer's end.
-Then the line need only reach the compressor's suction pressure, not the consumer's.
-
 === How long a line takes to pack
 
 A gas line is never full the way a liquid line is.
@@ -71,7 +61,7 @@ So:
 [.text-center]
 *minutes ≈ (length ÷ 100 m) × pressure in MPa × std m³ per MPa ÷ flow in std m³/min*
 
-.Example
+.300 m of Mk2 to a Blender's pressure
 ====
 300 m of Mk2 packed with Nitrogen Gas to a Blender's 6.9 MPa, at 300 std m³/min: 3 × 6.9 × 1,700 ÷ 300 ≈ 120 minutes.
 ====
@@ -121,15 +111,25 @@ The line before the compressor packs first, to the producers' pressure.
 Take off the time for the pressure it already has.
 * *Std m³ is gas measured at atmospheric pressure,* the units the machines show.
 
+=== The quicker layout: the compressor at the consumer's end
+
+A compressor at the consumer's end needs the long line packed only to its own suction pressure; only the short stub past it packs to the consumer's.
+A compressor at the source has to pack the whole line to the consumer's pressure.
+
+.Four wells down a 1,075 m nitrogen line
+====
+Four Resource Well Extractors (480 std m³/min together) fed about 240 m of Mk1 and 800 m of Mk2 to a Mk2 compressor, with a Blender about 30 m past it.
+One Mk2 reaches the Blender's 5.5 MPa from about 0.6 MPa at its suction, so the long line had to pack only to 0.6 MPa:
+(2.4 × 1,200 + 8 × 1,700) × 0.6 ÷ 480 ≈ 20 minutes for the pipe.
+In the game, with a Fluid Buffer on the line as well, the first gas reached the Blender at 29 minutes.
+
+With the compressor at the wells, the whole line would have had to pack to 5.5 MPa: more than 3 hours.
+====
+
 == One line for all the wells
 
 All the wells at a nitrogen extraction point can share one output line.
 A single Mk2 pipe carries far more than a pressurizer's wells make.
-
-.Example
-====
-Two Resource Well Extractors, 600 std m³/min together, ran down one line to a Mk2 compressor taking 585 std m³/min at about 1 MPa suction, and delivering 8.3 MPa to the Blenders.
-====
 
 == Long lines: boosters
 
@@ -158,10 +158,13 @@ Set it to what the producers make, minus what the running machines take.
 Opened fully, the next section's low pressure pulls the running section below its machines' minimum and they stop.
 . Open the Fluid Buffer last.
 
-.Example: a Rocket Fuel line
+.A Rocket Fuel line
 ====
-Two Blenders fed a Mk2 compressor, fifteen Fuel-Powered Generators and a 400 m³ Fluid Buffer: about 1,450 m³ in all.
-Filling all of it to the generators' 5.5 MPa takes hours; each 100 m³ section takes about a quarter of an hour.
+Two Blenders (200 std m³/min together) fed a Mk2 compressor and, past it, about 850 m of pipe, mostly Mk1, to fifteen Fuel-Powered Generators and a 400 m³ Fluid Buffer.
+Rocket Fuel in Mk1 pipe takes about 1,300 std m³ per MPa per 100 m at the generators' 5.5 MPa.
+
+* All at once, the pipe alone takes at least 8.5 × 5.5 × 1,300 ÷ 200 ≈ 5 hours, and the Fluid Buffer about 2 hours more.
+* In sections of about 200 m, with the buffer valved off, the first generators start after about 2 × 5.5 × 1,300 ÷ 200 ≈ 70 minutes.
 ====
 
 == Very high pressures: the plasma chain
