@@ -48,6 +48,13 @@ Its water surface must stand above the machines' inlets by at least their desire
 .Overall view of "water towers" feeding an input manifold for refineries
 image::water-towers-with-table.png[Water towers example]
 
+.Example: the tower in the figure
+====
+The end of the pipe from the tower (lower arrow) is 26 m below the tank's outlet (upper arrow), with 54 m of Mk2 pipe between them.
+The water leaves the tank at 12 m of head and picks up the 26 m on the way down.
+At 340 m³/min the friction costs only 0.29 m, so it reaches the manifold at 37.7 m, far above a Refinery's 8 m.
+====
+
 === Charge the tower before opening it
 
 A tower whose outlet is open from the start fills no faster than the network leaves it water.
