@@ -169,7 +169,7 @@ Filling all of it to the generators' 5.5 MPa takes hours; each 100 m³ section t
 A Particle Accelerator on Dark Matter Residue draws nothing below 48.3 MPa gauge and reaches full rate at 68.9 MPa.
 That takes *at least two stages* of compression: from a Converter's 2.8 MPa, one Mk2 reaches only about 18 MPa, and two in series about 107 MPa.
 
-Compressing these hot plasmas costs far more power than nitrogen.
+Compressing these plasmas costs far more power than nitrogen.
 The two Mk2 stages an Accelerator needs draw about 16 to 17 MW together; the more gas they move, the more they draw.
 
 == Gas in an existing save
