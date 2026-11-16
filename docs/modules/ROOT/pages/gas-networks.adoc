@@ -35,6 +35,92 @@ The first gas reached the Blender after about half an hour.
 *The quicker layout:* put the compressor at the consumer's end.
 Then the line need only reach the compressor's suction pressure, not the consumer's.
 
+=== How long a line takes to pack
+
+A gas line is never full the way a liquid line is.
+It _packs_: gas goes in until the line reaches its working pressure.
+A new or flushed line starts at atmospheric pressure, so the whole line has to pack up to a machine's inlet pressure before that machine runs.
+
+Each 100 m of pipe holds a roughly fixed amount of gas for every MPa of pressure:
+
+[cols="2,1,1"]
+|===
+| Gas | Mk1, per 100 m | Mk2, per 100 m
+
+| Nitrogen Gas
+| 1,200 std m³ per MPa
+| 1,700 std m³ per MPa
+
+| Rocket Fuel, Ionized Fuel
+| 1,200 to 1,500 std m³ per MPa
+| 1,800 to 2,100 std m³ per MPa
+
+| Dark Matter Residue
+| 70 std m³ per MPa
+| 100 std m³ per MPa
+
+| Excited Photonic Matter
+| 35 std m³ per MPa
+| 50 std m³ per MPa
+|===
+
+Rocket Fuel and Ionized Fuel take more per MPa as the pressure rises: the lower figure is near their producers' 2.1 MPa, the higher one near a Packager's 16.5 to 18.6 MPa.
+
+So:
+
+[.text-center]
+*minutes ≈ (length ÷ 100 m) × pressure in MPa × std m³ per MPa ÷ flow in std m³/min*
+
+.Example
+====
+300 m of Mk2 packed with Nitrogen Gas to a Blender's 6.9 MPa, at 300 std m³/min: 3 × 6.9 × 1,700 ÷ 300 ≈ 120 minutes.
+====
+
+A handy figure: Nitrogen Gas in Mk1 pipe at 120 std m³/min, one Blender's draw, takes about 10 minutes per MPa for each 100 m.
+
+.Minutes to pack 100 m of empty pipe to the consumers' desired pressure, at 120 std m³/min
+[cols="2,2,1,1"]
+|===
+| Gas | Consumer, desired pressure | Mk1 | Mk2
+
+| Nitrogen Gas
+| Blender, 6.9 MPa
+| 69
+| 99
+
+| Rocket Fuel, Ionized Fuel
+| Fuel-Powered Generator or Refinery, 6.9 MPa
+| 78
+| 110
+
+| Dark Matter Residue
+| Particle Accelerator, 68.9 MPa
+| 40
+| 57
+
+| Excited Photonic Matter
+| Quantum Encoder, 68.9 MPa
+| 20
+| 29
+|===
+
+Twice the flow takes half the time; ten times the length takes ten times as long.
+
+Reading these numbers:
+
+* *The flow is the surplus.*
+Only gas that isn't being used packs the line.
+A line feeding machines while it packs fills at the supply minus their draw, which can be a small part of the supply.
+* *They are the shortest times.*
+The last part of the fill slows as the line nears the pressure of whatever feeds it.
+And a compressor delivers less as its discharge packs, so the line past it takes longer than the compressor's starting rate suggests.
+* *A line packs only up to the pressure of whatever feeds it.*
+Every gas consumer needs more than any producer pushes, so the consumers' pressures are reached only past a compressor, at the flow the compressor delivers.
+The line before the compressor packs first, to the producers' pressure.
+* *A line already partly packed needs only the difference.*
+Take off the time for the pressure it already has.
+* *Std m³ is gas measured at atmospheric pressure,* the units the machines show.
+
 == One line for all the wells
 
 All the wells at a nitrogen extraction point can share one output line.
