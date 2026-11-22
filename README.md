@@ -1,3 +1,5 @@
+![FicstFluids Banner](docs/modules/ROOT/images/ficst-fluids-banner.png)
+
 # FicstFluids documentation
 
 The player manual for FicstFluids, a Satisfactory mod that replaces the game's fluid mechanics.
