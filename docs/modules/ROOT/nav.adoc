@@ -1,4 +1,5 @@
 * xref:index.adoc[FicstFluids]
+* xref:changelog.adoc[What's new]
 
 .Guide
 * xref:primer.adoc[Fluid mechanics primer]

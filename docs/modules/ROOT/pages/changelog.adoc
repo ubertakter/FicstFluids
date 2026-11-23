@@ -1,0 +1,33 @@
+= What's new
+:description: What changed in FicstFluids, release by release.
+
+What changed for players in each release, newest first.
+If you are updating, read the *Known issues* of the release you are installing.
+
+== 0.2.1 (Beta 1), 2026-11-22
+
+First tester release.
+
+=== Added
+
+* Fluid networks are simulated by FicstFluids' own flow model instead of the game's.
+During the beta the mod takes over only the networks you give it: `FF.TakeOver add all` takes every liquid network, and `FF.TakeOver add`, aimed at a network, takes that one (the way to add a gas network).
+Whatever you connect to a held network becomes part of it; a new build connected to nothing held stays vanilla.
+See xref:advanced.adoc#_running_networks[Running networks].
+* Liquid and gas networks, with pumps, valves, Fluid Buffers, Industrial Fluid Buffers, train fluid platforms and fluid truck stations.
+* Held networks keep their state through a save and load.
+* Every log a tester sends names the build that wrote it (the first FicstFluids line).
+
+=== Fixed (during testing, before this release)
+
+* A Fluid Buffer left with nothing connected, or with only a valve on its pipe, is kept by the mod with its fluid, and survives a save and load.
+Before, it went back to the game's flow.
+* A Fluid Buffer on its own, or with only pipes on it, no longer shows its fluid as N/A.
+
+=== Known issues
+
+* `FF.TakeOver add all` takes liquid networks only.
+Add each gas network on its own, aimed at it with `FF.TakeOver add`.
+* A Fluid Buffer that is full when an edit rebuilds its network can take in flow it cannot hold.
+A pump then shows flow (675 m³/min was seen) with every tank full, and the water is lost.
+Until this is fixed, don't edit a network while one of its tanks is full.
