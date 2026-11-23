@@ -1,7 +1,7 @@
-# Local preview only. docs.ficsit.app builds from its own playbook, which lists this
-# repository with `start_path: docs`.
+# Used for the local preview and for GitHub Pages (.github/workflows/pages.yml).
+# docs.ficsit.app builds from its own playbook, which lists this repository with `start_path: docs`.
 site:
-  title: FicstFluids (local preview)
+  title: FicstFluids
   start_page: ficstfluids::index.adoc
 
 content:
