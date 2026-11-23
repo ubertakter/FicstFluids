@@ -23,6 +23,7 @@ A screenshot helps.
 Paste that path into the File Explorer address bar to open the folder.
 Attach the log from the session where it happened.
 The game replaces it the next time it starts, and keeps the older one as `FactoryGame-backup-<date>.log` in the same folder.
+. *If the game crashed, the stack trace.* Copy the text from the crash reporter window that opens, and paste it into the report.
 . *Versions:* FicstFluids, and the game (shown on the main menu).
 
 // TODO: once released, the console commands a player should run before reporting.

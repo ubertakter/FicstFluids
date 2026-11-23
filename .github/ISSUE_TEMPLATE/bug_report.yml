@@ -27,6 +27,14 @@ body:
         Drag in `FactoryGame.log` from `%LOCALAPPDATA%\FactoryGame\Saved\Logs\`, from the session where it happened. The game replaces it the next time it starts, and keeps the older one as `FactoryGame-backup-<date>.log`.
     validations:
       required: false
+  - type: textarea
+    id: crash
+    attributes:
+      label: Crash stack trace
+      description: Only if the game crashed. Copy the text from the crash reporter window that opens and paste it here.
+      render: text
+    validations:
+      required: false
   - type: input
     id: mod-version
     attributes:
