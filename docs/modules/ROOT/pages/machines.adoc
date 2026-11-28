@@ -14,8 +14,8 @@ A Refinery's liquid inlet draws nothing at 4 m and draws fastest at 8 m.
 == Full speed comes before the desired pressure
 
 A machine draws to keep its input buffer topped up.
-While the buffer refills it asks for up to *twice* its use rate; once full, just its use rate.
-Generators take their water or fuel in loads, so they hold one load short of full.
+While the buffer refills it asks for up to *twice* its use rate; once topped up, just its use rate.
+Topped up is one load short of full: one recipe cycle's input for a crafting machine, one load of water or fuel for a generator.
 
 Because of that doubling, a machine keeps up with its own use well below its desired pressure.
 It runs at full speed from a quarter of the way up its band.
@@ -42,6 +42,18 @@ Gas inlets work the same way.
 A Blender's nitrogen runs at full speed from about 5.9 MPa, its desired pressure being 6.9 MPa.
 
 The xref:report.adoc[Network Status report] warns about an inlet below its full-speed pressure, says the speed the machine will drop to, and only notes one between full speed and desired.
+
+== A running machine's buffer never reads full
+
+A machine's inlet works like a float valve: it lets liquid in until the buffer is topped up, then passes only what the machine uses.
+So a running machine's input buffer never fills completely.
+At 100% it sits just below full and dips each time a cycle takes its input.
+This is not a shortage.
+
+To check whether a network is keeping its machines supplied, look at their inlet pressure, not their buffers.
+Look at the pipe connected to the machine's inlet: that pipe's *outlet head* is the machine's inlet pressure.
+While buffers refill, they ask for up to twice their rate and the pressure stays low.
+As they near topped up, they ask for less, and the pressure at the inlets rises.
 
 == Machines change the network
 
