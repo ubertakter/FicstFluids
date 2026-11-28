@@ -32,6 +32,9 @@ If what you see isn't here, or doesn't match the explanation, see xref:reporting
 | A machine runs at full speed below its desired pressure.
 | Full speed comes a quarter of the way up the band. xref:machines.adoc#_full_speed_comes_before_the_desired_pressure[Machines]
 
+| A running machine's input buffer never fills completely.
+| Its inlet is a float valve: the buffer tops up just short of full. Check the outlet head of the pipe into its inlet instead. xref:machines.adoc#_a_running_machines_buffer_never_reads_full[Machines]
+
 | The pipe fill percentages don't add up to the network's total.
 | The fill is an estimate of how the pipe looks. xref:pipes.adoc#_the_fill_shown_on_the_panel[Pipes]
 

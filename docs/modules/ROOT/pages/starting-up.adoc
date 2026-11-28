@@ -18,8 +18,8 @@ Joining two networks does the same: the new machines' empty buffers can take all
 
 Friction makes it worse: the farther machines get less pressure.
 
-TIP: The machines' buffers show how it is going.
-A buffer still filling means the network is still filling it.
+TIP: The pressure at the machines' inlets shows how it is going: it rises as their buffers near topped up.
+Don't wait for a buffer to read full; a running machine's never does (see xref:machines.adoc#_a_running_machines_buffer_never_reads_full[Machines]).
 
 == Liquid: the standby sequence
 
@@ -33,12 +33,12 @@ Once the network is full and the buffers are topped up, it supplies them all.
 
 One machine feeding another that uses exactly what it makes (one Refinery into another) settles at a low pressure, about 5 m at the consumer's inlet rather than the producer's 10 m.
 
-While the consumer's buffer isn't full, it asks for twice its rate.
+While the consumer's buffer isn't topped up, it asks for twice its rate.
 The producer can't give more than its own rate, so the line sits where the consumer's part-rate draw equals it.
 The consumer still gets all it uses and runs at full speed, so the report doesn't flag it.
 
 To bring the pressure up, put the consumer on standby for a moment.
-Its buffer fills, the line comes up to the producer's pressure, and it stays there when switched back on.
+Its buffer tops up, the line comes up to the producer's pressure, and it stays there when switched back on.
 
 == Water towers
 
@@ -99,7 +99,7 @@ Feed such pumps from a tank above them, or put them right at the source.
 A network whose producers make about what its machines use runs without trouble once it is up.
 Getting it there takes care, because it can settle two ways:
 
-* *Buffers full:* the machines take only what they use, and the pumps run at full lift.
+* *Buffers topped up:* the machines take only what they use, and the pumps run at full lift.
 * *Buffers refilling:* the machines ask for up to twice their rate, demand outruns supply, the pressure at the pumps' suction falls, and the pumps slow to protect themselves.
 The network then recovers only as fast as any surplus refills the buffers, which can take far longer than anyone will wait.
 
@@ -127,8 +127,8 @@ A water tower is the same: it bridges a temporary shortage and drains in a perma
 
 *To tell them apart,* give it a minute after switching the machines back on:
 
-* Buffers staying full and pressure staying up: it was start-up.
-* Pressure sinking back and buffers draining: the network is over capacity.
+* Inlet pressure staying up, buffers staying just below full: it was start-up.
+* Inlet pressure sinking back and buffers draining: the network is over capacity.
 
 == What the report shows during start-up
 
